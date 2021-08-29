@@ -1,14 +1,13 @@
 # Code to extract table from the image
-# Bank ke templates alag alag chahiye honge
 
 import cv2
 import numpy as np
 import pandas as pd
 import pytesseract
 import glob
-from ocr_detection.pdf_to_image import image_conversion
-from ocr_detection.convert_to_df import df_conversion
-from ocr_detection.generate_csv import csv_conversion
+from pdf_to_image import image_conversion
+from convert_to_df import df_conversion
+from generate_csv import csv_conversion
 
 # Method not useful for dubai account images
 def find_tables_1(image):
@@ -102,6 +101,7 @@ def find_tables_2(image):
 
 
 # To retrive the data from the input images
+# Install tesseract software for OCR
 def OCR(table_image):
 
     ## For operations on the column images from the segmented table
@@ -224,4 +224,4 @@ def main(pdf):
     csv_conversion(list_of_df)
 
 if __name__=="__main__":
-    main(pdf)
+    main("Sample_statement.pdf")

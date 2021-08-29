@@ -1,7 +1,7 @@
 
 ## This code saves the pdf file to a set of images
 
-import fitz
+import fitz  # Library name pyMupdf
 
 def image_conversion(pdf_file):
 
